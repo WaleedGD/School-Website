@@ -24,12 +24,6 @@ Open the published link in a browser. No installation needed.
 الموقع ملف واحد (`index.html`). لحفظ تقدم الطالب يستخدم المتصفح نفسه، فلا تُرسل أي بيانات لأي جهة.
 The site is a single file (`index.html`). Progress is saved in the student's own browser; no data is sent anywhere.
 
-## النشر عبر GitHub Pages | Publishing
-
-1. ارفع `index.html` و`LICENSE` و`README.md` إلى المستودع.
-2. من Settings ثم Pages، اختر الفرع `main` والمجلد `/ (root)`.
-3. انتظر دقائق ليظهر الرابط.
-
 ## الحقوق | License
 
 جميع الحقوق محفوظة © 2026 دلال علي الرايقي. لا يجوز النسخ أو التعديل أو إعادة النشر بدون إذن كتابي. التفاصيل في ملف [LICENSE](LICENSE).
