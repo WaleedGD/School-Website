@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>العلوم – الصف الرابع | مقرر تفاعلي (متحرك)</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f8f7;--card:#fff;--ink:#17302c;--mut:#5f7470;--line:#e0e9e6;--acc:#0f766e;--soft:#e4f3f0;--ok:#1e9a52;--bad:#d24545;--sh:0 4px 16px rgba(15,60,55,.07);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b19;--card:#17262a;--ink:#e6f1ee;--mut:#9bb3ae;--line:#26393c;--acc:#4fc3b5;--soft:#1b3433;--sh:none}}
+:root[data-theme="dark"]{--bg:#0f1b19;--card:#17262a;--ink:#e6f1ee;--mut:#9bb3ae;--line:#26393c;--acc:#4fc3b5;--soft:#1b3433;--sh:none}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.9 Tajawal,Tahoma,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--card);z-index:10}
+button{font:inherit;color:inherit}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;display:flex;align-items:center;gap:10px;padding:10px 14px;background:var(--card);border-bottom:1px solid var(--line)}
+.top b{flex:1;font-size:17px}
+.ib{border:1px solid var(--line);background:var(--bg);border-radius:12px;width:40px;height:40px;cursor:pointer}
+#mb{display:none}
+.pill{background:var(--soft);color:var(--acc);border-radius:20px;padding:2px 12px;font-size:14px;white-space:nowrap}
+.tb{position:absolute;inset:auto 0 0 0;height:3px}.tb i{display:block;height:100%;background:var(--acc);transition:width .4s}
+.layout{display:flex;max-width:1100px;margin:auto}
+.side{width:290px;flex:none;position:sticky;top:60px;align-self:flex-start;max-height:calc(100vh - 64px);overflow:auto;padding:14px}
+.side a{display:flex;align-items:center;gap:8px;padding:6px 12px;border-radius:12px;color:var(--ink);text-decoration:none;font-size:16px;line-height:1.6;cursor:pointer}
+.side a:hover{background:var(--soft)}.side a.on{background:var(--acc);color:#fff}
+.side .u{font-weight:800;margin-top:10px}.side .c{color:var(--mut);font-size:14px;padding-right:20px}.side .l{padding-right:30px;font-size:15px}
+.side small{margin-right:auto;opacity:.8}
+.ur{display:flex;align-items:center;margin-top:10px}.ur .u{flex:1;margin-top:0}
+.ar{border:0;background:none;cursor:pointer;width:36px;height:36px;border-radius:10px;color:var(--mut);font-size:18px;transition:transform .2s}.ar.op{transform:rotate(180deg)}.ar:hover{background:var(--soft)}
+.view{flex:1;min-width:0;padding:18px 18px 60px}
+.w .top,.w .side{display:none}
+h1{margin:6px 0 10px;font-size:26px;font-weight:800}
+.hero{text-align:center;padding:12vh 6px 24px;background:radial-gradient(circle at 50% 0,var(--soft),transparent 65%)}
+.hero h1{font-size:clamp(28px,7vw,40px);line-height:1.4}
+.logo{width:92px;height:92px;margin:0 auto 18px;border-radius:50%;background:var(--soft);display:grid;place-items:center;font-size:46px;box-shadow:var(--sh)}
+.lead{color:var(--mut);font-size:19px;margin:10px 0 26px}
+.cta{font-size:20px;padding:13px 34px}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px}
+.chips span{background:var(--card);border:1px solid var(--line);border-radius:30px;padding:5px 16px;font-size:15px;color:var(--mut)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px;margin-bottom:16px;box-shadow:var(--sh)}
+.card h2,.card h3{margin:0 0 8px;color:var(--acc);font-size:20px}.card li{margin:8px 0}
+.row{display:flex;align-items:center;gap:14px;width:100%;text-align:right;margin:10px 0;padding:14px 16px;border:1.5px solid var(--line);border-radius:18px;background:var(--card);cursor:pointer;box-shadow:var(--sh);font-size:19px;font-weight:700}
+.row:hover{border-color:var(--acc)}
+.uic{width:50px;height:50px;border-radius:14px;background:var(--soft);display:grid;place-items:center;font-size:26px;flex:none}
+.ut{flex:1}.ut small{display:block;color:var(--mut);font-weight:400;font-size:14px}
+.mini{display:block;height:6px;background:var(--line);border-radius:6px;margin-top:4px;overflow:hidden}.mini i{display:block;height:100%;background:var(--acc)}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin:10px 0 16px;padding-bottom:4px}
+.tab{flex:none;border:1.5px solid var(--line);background:var(--card);border-radius:30px;padding:6px 16px;font-size:16px;cursor:pointer}
+.tab.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.go{border:0;border-radius:30px;padding:9px 22px;background:var(--acc);color:#fff;font-weight:700;cursor:pointer}
+.go.s{background:var(--soft);color:var(--acc)}
+.term{padding:10px 0;border-bottom:1px dashed var(--line)}.term:last-child{border:0}.term b{color:var(--acc)}.term b::after{content:" : "}
+.mp{display:flex;flex-direction:column;align-items:center;overflow-x:auto}
+.mr{background:var(--acc);color:#fff;border-radius:16px;padding:8px 20px;font-weight:800}
+.mc{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;border-top:2px solid var(--line);margin-top:16px;padding-top:16px}
+.mb{display:flex;flex-direction:column;align-items:center;gap:6px}
+.mn{background:var(--soft);border:1.5px solid var(--acc);border-radius:14px;padding:4px 14px;font-weight:700}
+.mk{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:0 10px;font-size:15px;color:var(--mut)}
+.fc{min-height:190px;display:grid;place-items:center;text-align:center;padding:24px;border-radius:22px;border:2px solid var(--acc);background:var(--card);cursor:pointer;font-size:24px;font-weight:800;box-shadow:var(--sh)}
+.fc.b{background:var(--soft);font-size:20px;font-weight:500}
+.fcn{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:var(--mut)}
+.q{margin:18px 0 4px;font-weight:700}
+.opt{display:block;width:100%;text-align:right;margin:8px 0;padding:11px 15px;border:1.5px solid var(--line);border-radius:14px;background:var(--bg);cursor:pointer}
+.opt:disabled{cursor:default}
+.opt.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 16%,var(--card))}
+.opt.bad{border-color:var(--bad);background:color-mix(in srgb,var(--bad) 16%,var(--card))}
+.why{font-size:15px;color:var(--mut);margin:2px 4px 8px}
+.win{text-align:center;font-size:20px;font-weight:800}
+.pg{display:flex;justify-content:space-between;gap:10px;margin-top:8px}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.96)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes slN{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+@keyframes slP{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:none}}
+.view{transition:opacity .17s,transform .17s}.view.out{opacity:0;transform:translateY(-8px)}
+.in>*{animation:rise .4s both}.in>*:nth-child(2){animation-delay:.05s}.in>*:nth-child(3){animation-delay:.1s}.in>*:nth-child(4){animation-delay:.15s}.in>*:nth-child(5){animation-delay:.2s}.in>*:nth-child(6){animation-delay:.25s}
+.hero>*{animation:rise .6s both}.hero>*:nth-child(2){animation-delay:.1s}.hero>*:nth-child(3){animation-delay:.2s}.hero>*:nth-child(4){animation-delay:.3s}.hero>*:nth-child(5){animation-delay:.4s}
+.hero .logo{animation:rise .6s both,bob 3.5s ease-in-out .6s infinite}
+.chips span{animation:pop .5s both}.chips span:nth-child(2){animation-delay:.1s}.chips span:nth-child(3){animation-delay:.2s}.chips span:nth-child(4){animation-delay:.3s}.chips span:nth-child(5){animation-delay:.4s}
+.sub{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .3s ease,visibility 0s .3s}.sub.op{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .3s ease,visibility 0s}.sub>div{overflow:hidden}
+.opt.ok.pop{animation:pop .35s}.opt.bad.pop{animation:shake .4s}.why.sl{animation:rise .3s both}
+.win{animation:pop .45s}
+.go,.opt,.row,.tab{transition:transform .15s,background .2s,border-color .2s}.go:active,.opt:active,.tab:active{transform:scale(.96)}
+.fcw{perspective:900px}.fcw.nx{animation:slN .35s both}.fcw.pv{animation:slP .35s both}
+.fci{position:relative;height:230px;transform-style:preserve-3d;transition:transform .55s cubic-bezier(.4,.2,.2,1)}.fci.f{transform:rotateY(180deg)}
+.fci .fc{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:auto}
+.fci .bk{transform:rotateY(180deg);background:var(--soft);font-size:20px;font-weight:500}
+@media(max-width:820px){#mb{display:block}.side{display:none;position:fixed;top:60px;right:0;bottom:0;width:min(310px,86vw);max-height:none;background:var(--card);z-index:8;border-left:1px solid var(--line)}.side.open{display:block}}
+
+:root{--hot:#ff8a3d;--sun:#ffc533}
+@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes pulse{50%{transform:scale(1.07)}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes fall{to{transform:translate(var(--x),105vh) rotate(720deg)}}
+.in>*{animation:rise .6s cubic-bezier(.2,.9,.3,1.25) both}.in>*:nth-child(2){animation-delay:.07s}.in>*:nth-child(3){animation-delay:.14s}.in>*:nth-child(4){animation-delay:.21s}.in>*:nth-child(5){animation-delay:.28s}.in>*:nth-child(6){animation-delay:.35s}
+body{background:radial-gradient(900px 420px at 85% -60px,color-mix(in srgb,var(--acc) 15%,transparent),transparent),radial-gradient(700px 420px at 0 140px,color-mix(in srgb,var(--hot) 11%,transparent),transparent),var(--bg)}
+body::before{background:#0b6b64}
+.top{background:linear-gradient(90deg,#0b6b64,#0e9aa7);color:#fff;border:0;box-shadow:0 4px 18px rgba(8,80,75,.25)}
+.top b{color:#fff;font-size:19px}
+.ib{background:rgba(255,255,255,.18);border:0;color:#fff;border-radius:14px}.ib:hover{background:rgba(255,255,255,.32)}
+.pill{background:#fff;color:#0b6b64;font-weight:800;font-size:15px;padding:3px 14px}.pill.bump{animation:pop .5s}
+.tb{background:rgba(255,255,255,.25)}.tb i{background:var(--sun)}
+.side a.on{background:linear-gradient(90deg,var(--acc),#0e9aa7);box-shadow:0 4px 12px rgba(15,118,110,.3)}
+h1{font-size:30px;background:linear-gradient(90deg,var(--acc),#2a7de1);-webkit-background-clip:text;background-clip:text;color:transparent}
+.card{border:0;border-top:5px solid var(--acc);border-radius:26px;padding:22px}.card h2,.card h3{font-size:22px}
+.hero{position:relative;overflow:hidden;border-radius:32px;margin-top:10px;padding:10vh 12px 38px;background:linear-gradient(160deg,color-mix(in srgb,var(--acc) 24%,var(--card)),var(--card) 62%)}
+.hero .logo{width:112px;height:112px;font-size:58px;background:linear-gradient(135deg,#fff,var(--soft));border:4px solid var(--acc)}
+.fl{position:absolute;font-size:34px}.f1{top:6%;right:8%}.f2{top:14%;left:9%}.f3{top:48%;right:4%}.f4{top:56%;left:5%}.f5{bottom:8%;right:20%}.f6{bottom:10%;left:22%}
+.hero>.fl{animation:bob 4s ease-in-out infinite}.hero>.f2{animation-delay:.6s}.hero>.f3{animation-delay:1.2s}.hero>.f4{animation-delay:1.8s}.hero>.f5{animation-delay:.3s}
+.hero>.cta{animation:rise .6s .3s both,pulse 2s 1s infinite}
+.go{background:linear-gradient(180deg,#14a39a,var(--acc));box-shadow:0 4px 0 #0a524c}.go:active{transform:translateY(3px);box-shadow:0 1px 0 #0a524c}
+.go.s{background:var(--soft);color:var(--acc);box-shadow:0 3px 0 var(--line)}
+.cta{background:linear-gradient(180deg,#ffa05c,var(--hot));box-shadow:0 5px 0 #c4561a;font-size:22px;padding:14px 42px}.cta:active{box-shadow:0 1px 0 #c4561a}
+.row{padding:16px 18px;border:2px solid var(--line);border-radius:24px}
+.row:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 12px 26px rgba(15,100,95,.18)}
+.uic{width:64px;height:64px;border-radius:20px;font-size:33px}
+.view>.row:nth-of-type(1) .uic{background:color-mix(in srgb,#34d399 32%,var(--card))}
+.view>.row:nth-of-type(2) .uic{background:color-mix(in srgb,#60a5fa 32%,var(--card))}
+.view>.row:nth-of-type(3) .uic{background:color-mix(in srgb,#a78bfa 32%,var(--card))}
+.mini{height:9px}.mini i{background:linear-gradient(90deg,var(--acc),var(--sun))}
+.tab{padding:8px 18px;font-size:17px;font-weight:700}.tab.on{background:linear-gradient(180deg,#14a39a,var(--acc));box-shadow:0 3px 0 #0a524c}
+.q{font-size:19px;counter-reset:o}
+.opt{counter-increment:o;display:flex;align-items:center;gap:12px;border-width:2px;padding:12px 14px;border-radius:18px;font-size:18px}
+.opt:not(:disabled):hover{border-color:var(--acc);background:var(--soft);transform:translateX(-5px)}
+.opt::before{content:counter(o,arabic-indic);flex:none;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--soft);color:var(--acc);font-weight:800}
+.opt.ok::before{content:"✓";background:var(--ok);color:#fff}.opt.bad::before{content:"✕";background:var(--bad);color:#fff}
+.fci .fc{background:linear-gradient(135deg,var(--acc),#2a7de1);color:#fff;border:0;font-size:30px;border-radius:30px;box-shadow:0 12px 28px rgba(15,100,95,.3)}
+.fci .bk{background:linear-gradient(135deg,#fff1cf,#ffd9a8);color:#4a2f00;font-size:21px}
+.win{background:linear-gradient(135deg,#fff6d6,#ffe1b8);color:#5a3a00;border-top-color:var(--hot)}
+.top b{line-height:1.35}.by2{display:block;font-size:12px;font-weight:500;opacity:.85;line-height:1.3}
+.hero>.by{position:absolute;top:14px;left:0;right:0;width:max-content;max-width:90%;margin:auto;padding:2px 16px;font-size:15px;font-weight:700;color:var(--acc);background:var(--card);border:1px solid var(--line);border-radius:30px;animation:rise .6s .5s both}
+.cr{text-align:center;padding:18px 16px calc(26px + env(safe-area-inset-bottom,0px));font-size:14px;color:var(--ink);opacity:.45;letter-spacing:.2px;user-select:none}
+.cf{position:fixed;top:-14px;width:10px;height:15px;border-radius:3px;z-index:99;pointer-events:none;animation:fall 1.9s ease-in forwards}
+@media(prefers-reduced-motion:reduce){.in>*,.hero>*,.fcw.nx,.fcw.pv,.win,.why.sl{animation:fade .4s both!important}.hero>.fl,.hero .logo,.hero>.cta,.cf,.chips span,.opt.bad.pop,.opt.ok.pop{animation:none!important}}
+</style></head><body>
+<header class="top"><button class="ib" id="mb" onclick="document.getElementById('side').classList.toggle('open')" aria-label="القائمة">☰</button><b>🌱 العلوم – الصف الرابع<small class="by2">المعلمة: دلال علي الرايقي</small></b><span class="pill" id="pp"></span><button class="ib" onclick="theme()" aria-label="الوضع">🌓</button><button class="ib" onclick="reset()" aria-label="إعادة" title="إعادة البدء">↺</button><div class="tb"><i id="pbar"></i></div></header>
+<div class="layout"><nav class="side" id="side"></nav><main class="view" id="view"></main></div>
+<footer class="cr" dir="ltr">Teacher: Dalal Ali Al-Raiqi - October 2026</footer>
+<script>
+const U=[
+{t:"الوحدة الأولى: المخلوقات الحية",e:"🌿",c:"#0f766e",ch:[
+ {t:"الفصل الأول: ممالك المخلوقات الحية",l:[
+  {t:"الدرس الأول: الخلايا",p:["الخلية هي أصغر وحدة بناء في كل مخلوق حي.","نستخدم المجهر لنرى الخلايا لأنها صغيرة جداً، والملاحظة الجيدة تعتمد على الحواس والأدوات.","للخلية النباتية جدار خلوي وبلاستيدات خضراء، أما الحيوانية فليس لها جدار خلوي."],
+   q:[["ما أصغر وحدة بناء في المخلوق الحي؟",["الجهاز","الخلية","العضو"],1,"كل المخلوقات الحية مبنية من خلايا."],["أي جزء نجده في الخلية النباتية فقط؟",["النواة","الغشاء الخلوي","الجدار الخلوي"],2,"الجدار الخلوي يعطي النبات شكلاً ثابتاً."]]},
+  {t:"الدرس الثاني: تصنيف المخلوقات الحية",p:["التصنيف هو جمع المخلوقات في مجموعات حسب صفاتها المشتركة.","من الممالك: الحيوانات والنباتات والفطريات.","النباتات تصنع غذاءها بنفسها، والحيوانات تحصل عليه من مخلوقات أخرى."],
+   q:[["لماذا نصنّف المخلوقات الحية؟",["لنرتبها حسب صفاتها المشتركة","لنغيّر ألوانها","لنزيد أعدادها"],0,"التصنيف يسهّل دراستها ومقارنتها."],["كيف تحصل النباتات الخضراء على غذائها؟",["تأكل الحيوانات","تصنعه بنفسها","تلتقطه من التربة جاهزاً"],1,"تستخدم ضوء الشمس لصنعه."]]}],
+  x:[["أي مما يلي من الفطريات؟",["عيش الغراب","الصبّار","النحلة"],0,"عيش الغراب (الفطر) من مملكة الفطريات."]]},
+ {t:"الفصل الثاني: المملكة الحيوانية",l:[
+  {t:"الدرس الأول: الحيوانات اللافقارية",p:["الحيوانات اللافقارية ليس لها عمود فقري.","منها الحشرات والديدان وقنديل البحر.","بعضها له هيكل خارجي صلب يحميه."],
+   q:[["أي مما يلي حيوان لافقاري؟",["الفراشة","السمكة","القطة"],0,"الفراشة حشرة بلا عمود فقري."],["أي حيوان ليس له عمود فقري؟",["الدودة","الحصان","الصقر"],0,"الديدان من اللافقاريات."]]},
+  {t:"الدرس الثاني: الحيوانات الفقارية",p:["الحيوانات الفقارية لها عمود فقري.","مجموعاتها خمس: الثدييات والطيور والأسماك والزواحف والبرمائيات.","الثدييات ترضع صغارها، والطيور لها ريش وتبيض."],
+   q:[["أي حيوان يعيش في الماء وعلى اليابسة؟",["الأسد","الضفدع","الصقر"],1,"الضفدع من البرمائيات."],["ما الصفة التي تميّز الطيور؟",["الشعر","الزعانف","الريش"],2,"الريش يساعد على الطيران والدفء."]]},
+  {t:"الدرس الثالث: أجهزة أجسام الحيوانات",p:["لكل جهاز في الجسم وظيفة، مثل الهضم والتنفس والدوران.","جهاز الهضم يحوّل الطعام إلى مواد يستفيد منها الجسم.","الأسماك تتنفس بالخياشيم، والقلب يضخ الدم في الجسم."],
+   q:[["بماذا تتنفس الأسماك؟",["الرئتين","الخياشيم","الجلد فقط"],1,"الخياشيم تأخذ الأكسجين من الماء."],["ما وظيفة جهاز الهضم؟",["تحويل الطعام إلى مواد مفيدة","ضخ الدم","الإحساس بالألم"],0,"الهضم يفتّت الطعام ليستفيد الجسم منه."]]}],
+  x:[["أي حيوان من الثدييات؟",["القرش","الدلفين","السلحفاة"],1,"الدلفين يتنفس الهواء ويرضع صغاره."]]}]},
+{t:"الوحدة الثانية: الأنظمة البيئية",e:"🌳",c:"#0f766e",ch:[
+ {t:"الفصل الثالث: استكشاف الأنظمة البيئية",l:[
+  {t:"الدرس الأول: مقدمة في الأنظمة البيئية",p:["النظام البيئي مكان فيه مخلوقات حية وأشياء غير حية تتفاعل معاً.","من أمثلته الغابة والبركة والصحراء.","مهارة التوقّع: نخمّن ما سيحدث اعتماداً على ما نعرفه."],
+   q:[["أي مما يلي شيء غير حي في النظام البيئي؟",["الماء","الأرنب","الشجرة"],0,"الماء والتربة والهواء أشياء غير حية."],["أي مما يلي مثال على نظام بيئي؟",["بركة","مسطرة","كتاب"],0,"البركة فيها مخلوقات حية وماء وتربة."]]},
+  {t:"الدرس الثاني: العلاقات في الأنظمة البيئية",p:["المنتجات تصنع غذاءها، والمستهلكات تأكل غيرها، والمحلّلات تفكك البقايا.","السلسلة الغذائية تبيّن من يأكل من.","الشمس هي المصدر الأول للطاقة."],
+   q:[["ما المصدر الأول للطاقة في معظم السلاسل الغذائية؟",["القمر","الشمس","الرياح"],1,"النباتات تستخدم ضوء الشمس."],["ماذا نسمّي الكائن الذي يصنع غذاءه بنفسه؟",["مستهلك","محلّل","منتج"],2,"النبات الأخضر منتج."]]},
+  {t:"الدرس الثالث: التغيرات في الأنظمة البيئية",p:["بعض التغيرات سريع كالحرائق والفيضانات، وبعضها بطيء.","الإنسان قد يغيّر النظام البيئي بالبناء وقطع الأشجار.","التغيرات تؤثر في المخلوقات التي تعيش هناك."],
+   q:[["أي مما يلي تغيّر سريع؟",["الفيضان","نمو الشجرة الكبيرة","تكوّن الجبل"],0,"الفيضان يحدث خلال وقت قصير."],["كيف نحافظ على النظام البيئي؟",["نقطع الأشجار عشوائياً","نترك النفايات","نحمي النباتات والحيوانات"],2,"الحماية تحفظ توازن البيئة."]]}],
+  x:[["ماذا يحدث للأرنب لو اختفت النباتات التي يأكلها؟",["يقل غذاؤه","يزداد غذاؤه","لا يتغير شيء"],0,"النباتات غذاؤه الأساسي."]]}]},
+{t:"الوحدة الثالثة: صحة الإنسان",e:"🩺",c:"#0f766e",ch:[
+ {t:"الفصل الرابع: الأمراض والعدوى",l:[
+  {t:"الدرس الأول: الأمراض",p:["المرض حالة تؤثر في عمل الجسم.","بعض الأمراض معدٍ وبعضها غير معدٍ.","الجراثيم كالبكتيريا والفيروسات قد تسبب أمراضاً، والطبيب يساعدنا على العلاج."],
+   q:[["ما سبب الأمراض المعدية غالباً؟",["الجراثيم","الضوء","الماء النظيف"],0,"الجراثيم تنتقل بين الناس."],["من يساعدنا عند المرض؟",["الطبيب","الجار فقط","لا أحد"],0,"الطبيب يشخّص ويصف العلاج."]]},
+  {t:"الدرس الثاني: العدوى وانتقالها",p:["تنتقل الجراثيم بالرذاذ واللمس والأسطح والطعام الملوث.","نغسل اليدين بالماء والصابون ونغطي الفم عند العطس.","اللقاحات تساعد الجسم على الوقاية من أمراض معينة."],
+   q:[["ما أفضل طريقة للحدّ من انتقال الجراثيم؟",["غسل اليدين بالماء والصابون","مشاركة الأدوات الشخصية","لمس الوجه كثيراً"],0,"الغسل يزيل كثيراً من الجراثيم."],["كيف نغطي أفواهنا عند العطس؟",["بيدنا مباشرة","بمنديل أو بثنية المرفق","لا نغطي"],1,"هكذا لا ينتشر الرذاذ."]]}],
+  x:[["ما فائدة اللقاحات؟",["تغيّر لون الجلد","تساعد على الوقاية من أمراض معينة","تجعلنا ننام أقل"],1,"اللقاح يهيّئ الجسم لمواجهة المرض."]]},
+ {t:"الفصل الخامس: التغذية والصحة",l:[
+  {t:"الدرس الأول: المحافظة على الصحة",p:["النظافة الشخصية وتنظيف الأسنان تحمينا من المشكلات الصحية.","الحركة والرياضة تقوّي الجسم.","النوم الكافي وشرب الماء يساعدان الجسم على النشاط."],
+   q:[["أي عادة تحافظ على صحتك؟",["الحركة اليومية","السهر الطويل","ترك تنظيف الأسنان"],0,"الحركة تقوّي القلب والعضلات."],["ماذا يفعل الماء لجسمك؟",["يساعده على النشاط","يضر الأسنان دائماً","لا فائدة له"],0,"الجسم يحتاج الماء كل يوم."]]},
+  {t:"الدرس الثاني: الغذاء والتغذية",p:["الغذاء يمدّنا بالطاقة ويساعد على النمو.","المجموعات الغذائية: الخضار والفواكه والحبوب والبروتينات والألبان.","نتنوع في الطعام ونقلل من السكريات والوجبات السريعة."],
+   q:[["أي مجموعة تساعد في بناء الجسم، مثل البيض والبقوليات؟",["البروتينات","الحلوى","المشروبات الغازية"],0,"البروتين يبني العضلات."],["أي وجبة أكثر فائدة؟",["رقائق وعصير محلّى","خضار ودجاج مشوي وماء","حلوى فقط"],1,"التنوع أفضل لجسمك."]]}],
+  x:[["أي مجموعة غذائية تضم الحليب والجبن؟",["الحبوب","الألبان","الفواكه"],1,"الحليب والجبن من الألبان."]]}]}
+];
+const VOC={
+"0.0.0":[["الخلية","أصغر وحدة بناء في المخلوق الحي."],["المجهر","أداة تكبّر الأشياء الصغيرة لنراها."],["الجدار الخلوي","غلاف صلب يحيط بالخلية النباتية."]],
+"0.0.1":[["التصنيف","جمع المخلوقات في مجموعات حسب صفاتها المشتركة."],["المملكة","أكبر مجموعة في تصنيف المخلوقات الحية."],["الفطريات","مخلوقات حية مثل عيش الغراب، لا تصنع غذاءها بنفسها."]],
+"0.1.0":[["الحيوان اللافقاري","حيوان ليس له عمود فقري."],["الحشرات","لافقاريات لها ست أرجل وجسمها من ثلاثة أجزاء."],["الهيكل الخارجي","غطاء صلب يحمي جسم بعض الحيوانات."]],
+"0.1.1":[["العمود الفقري","عظام متصلة تدعم الجسم وتحميه."],["الثدييات","فقاريات ترضع صغارها."],["البرمائيات","فقاريات تعيش في الماء وعلى اليابسة، مثل الضفدع."]],
+"0.1.2":[["الجهاز","مجموعة أعضاء تعمل معاً لأداء وظيفة."],["الخياشيم","أعضاء تأخذ الأكسجين من الماء عند الأسماك."],["القلب","عضو يضخ الدم في الجسم."]],
+"1.0.0":[["النظام البيئي","مخلوقات حية وأشياء غير حية تتفاعل معاً في مكان واحد."],["المخلوق الحي","كائن ينمو ويحتاج إلى غذاء وماء وهواء."],["التوقّع","تخمين ما سيحدث اعتماداً على ما نعرفه."]],
+"1.0.1":[["المنتج","مخلوق يصنع غذاءه بنفسه، مثل النبات الأخضر."],["المستهلك","مخلوق يحصل على غذائه بأكل مخلوقات أخرى."],["المحلّل","مخلوق يفكك بقايا الأحياء الميتة."],["السلسلة الغذائية","مخطط يبيّن انتقال الطاقة من مخلوق إلى آخر عند الأكل."]],
+"1.0.2":[["التغيّر البيئي","تبدّل يحدث في النظام البيئي مع مرور الوقت."],["الفيضان","ارتفاع الماء وغمره لليابسة."],["حماية البيئة","المحافظة على المخلوقات والموارد من التلف."]],
+"2.0.0":[["المرض","حالة تؤثر في عمل الجسم."],["الجراثيم","مخلوقات دقيقة قد تسبب أمراضاً، مثل البكتيريا والفيروسات."],["المرض المعدي","مرض ينتقل من شخص إلى آخر."]],
+"2.0.1":[["العدوى","انتقال الجراثيم من شخص أو شيء إلى آخر."],["اللقاح","دواء يهيّئ الجسم للوقاية من مرض معين."],["النظافة الشخصية","عادات تحمينا من الجراثيم، مثل غسل اليدين."]],
+"2.1.0":[["الصحة","حالة يكون فيها الجسم بخير."],["الرياضة","حركة منتظمة تقوّي الجسم."],["النوم الكافي","راحة تمنح الجسم النشاط."]],
+"2.1.1":[["التغذية","حصول الجسم على الغذاء الذي يحتاجه."],["البروتينات","غذاء يبني العضلات ويصلحها."],["الغذاء المتوازن","وجبات تضم أنواعاً متنوعة من المجموعات الغذائية."]]};
+
+let S=load(),V={p:"welcome"},T=null,F={i:0,f:0};
+let ANIM=0,NQ="",FD=0,LASTOK=0;const PR=["✅ أحسنت!","🌟 ممتاز!","🎉 أبدعت!","🚀 رائع!"];
+function boom(){for(let i=0;i<40;i++){const d=document.createElement("i");d.className="cf";d.style.cssText=`left:${Math.random()*100}vw;background:hsl(${Math.random()*360} 85% 60%);animation-delay:${Math.random()*.4}s;--x:${(Math.random()-.5)*220}px`;document.body.appendChild(d);setTimeout(()=>d.remove(),2500)}}
+let O=[];function tg(i){O=O.includes(i)?O.filter(x=>x!=i):[...O,i];const e=document.getElementById("sub"+i),b=document.getElementById("ar"+i);if(e){e.classList.toggle("op");b.classList.toggle("op")}else draw()}
+function leave(f){const v=document.getElementById("view");v.classList.add("out");setTimeout(()=>{v.classList.remove("out");f()},170)}
+function load(){let s;try{s=JSON.parse(localStorage.getItem("sci4c")||"{}")}catch(e){s={}}s.a=s.a||{};s.b=s.b||{};return s}
+function save(){try{localStorage.setItem("sci4c",JSON.stringify(S))}catch(e){}}
+const key=(u,c,l)=>[u,c,l].filter(x=>x!==undefined).join(".");
+const nk=n=>"u"+key(n.u,n.c,n.l);
+const LS=a=>U[a[0]].ch[a[1]].l[a[2]];
+const lq=a=>LS(a).q;
+const ldone=a=>lq(a).every((q,k)=>S.a[key(...a)+"."+k]!==undefined);
+const lessons=u=>U[u].ch.flatMap((h,c)=>h.l.map((_,l)=>[u,c,l]));
+const flat=U.flatMap((_,u)=>lessons(u));
+const upct=u=>Math.round(lessons(u).filter(ldone).length/lessons(u).length*100);
+const cpool=(u,c)=>U[u].ch[c].l.flatMap(l=>l.q).concat(U[u].ch[c].x||[]);
+const upool=u=>U[u].ch.flatMap((_,c)=>cpool(u,c));
+const lof=n=>n.l!==undefined?[[n.u,n.c,n.l]]:n.c!==undefined?U[n.u].ch[n.c].l.map((_,l)=>[n.u,n.c,l]):lessons(n.u);
+const ttl=n=>n.l!==undefined?LS([n.u,n.c,n.l]).t:n.c!==undefined?U[n.u].ch[n.c].t:U[n.u].t;
+const short=t=>t.split(": ")[1]||t;
+const terms=n=>lof(n).flatMap(a=>VOC[key(...a)]);
+const best=k=>S.b[k]!==undefined?"أفضل نتيجة: "+S.b[k]+"%":"لم تُجرَّب بعد";
+function go(k){leave(()=>go0(k))}
+function go0(k){ANIM=1;T=null;F={i:0,f:0};if(k=="welcome"||k=="home")V={p:k};else{const a=k.slice(1).split(".").map(Number);V={p:"n",u:a[0],c:a[1],l:a[2],tab:"summary"};if(a.length>1&&!O.includes(a[0]))O.push(a[0])}document.getElementById("side").classList.remove("open");draw();window.scrollTo(0,0)}
+function tab(t){leave(()=>tab0(t))}
+function tab0(t){ANIM=1;V.tab=t;T=null;F={i:0,f:0};draw()}
+function pickL(i,k,o){NQ="pickL('"+i+"',"+k+",";const A=i.split(".").map(Number),was=ldone(A);S.a[i+"."+k]=o;save();draw();if(!was&&ldone(A))setTimeout(boom,250)}
+function startT(){const n=V,pool=n.c!==undefined?cpool(n.u,n.c):upool(n.u);T={key:(n.c!==undefined?"c":"u")+key(n.u,n.c),q:[...pool].sort(()=>Math.random()-.5).slice(0,n.c!==undefined?6:8),a:[]};draw()}
+function pickT(k,o){NQ="pickT("+k+",";T.a[k]=o;if(T.q.every((_,j)=>T.a[j]!==undefined)){const r=Math.round(T.q.filter((q,j)=>T.a[j]==q[2]).length/T.q.length*100);S.b[T.key]=Math.max(r,S.b[T.key]||0);save();if(r>=70)setTimeout(boom,250)}draw()}
+function flip(){F.f=!F.f;const e=document.querySelector(".fci");if(e)e.classList.toggle("f");else draw()}
+function step(d){const L=terms(V).length;F={i:(F.i+d+L)%L,f:0};FD=d;draw()}
+function reset(){if(confirm("هل تريد مسح تقدمك والبدء من جديد؟")){S.a={};S.b={};save();go("home")}}
+function theme(){const r=document.documentElement,d=getComputedStyle(r).getPropertyValue("--bg").trim()=="#0f1b19";r.dataset.theme=d?"light":"dark"}
+function qh(q,k,a,fn){const nw=fn===NQ;let h=`<div class="q">${k+1}. ${q[0]}</div>`+q[1].map((o,j)=>`<button class="opt${a===undefined?"":j==q[2]?" ok":j==a?" bad":""}${nw&&a!==undefined&&(j==q[2]||j==a)?" pop":""}" ${a===undefined?"":"disabled"} onclick="${fn}${j})">${o}</button>`).join("");
+ if(a!==undefined)h+=`<div class="why${nw?" sl":""}">${a==q[2]?PR[(k+q[3].length)%PR.length]+" ":"💡 لا بأس، تذكّر: "}${q[3]}</div>`;return h}
+function sideH(){const on=V.p=="n"?nk(V):V.p;
+ let h=`<a class="${on=="home"?"on":""}" onclick="go('home')">🏠 الرئيسية</a>`;
+ U.forEach((u,i)=>{const op=O.includes(i);h+=`<div class="ur"><a class="u ${on=="u"+i?"on":""}" onclick="go('u${i}')">${u.e} ${short(u.t)}<small>${upct(i)}%</small></a><button id="ar${i}" class="ar${op?" op":""}" onclick="tg(${i})" aria-label="الدروس">▾</button></div>`;h+=`<div class="sub${op?" op":""}" id="sub${i}"><div>`;
+  u.ch.forEach((ch,c)=>{h+=`<a class="c ${on=="u"+i+"."+c?"on":""}" onclick="go('u${i}.${c}')">${short(ch.t)}</a>`+ch.l.map((l,k)=>`<a class="l ${on=="u"+i+"."+c+"."+k?"on":""}" onclick="go('u${i}.${c}.${k}')">${short(l.t)}<small>${ldone([i,c,k])?"✓":""}</small></a>`).join("")});h+="</div></div>"});
+ return h}
+function homeH(){return `<h1>اختر وحدتك الدراسية</h1>`+U.map((u,i)=>`<button class="row" onclick="go('u${i}')"><span class="uic">${u.e}</span><span class="ut">${u.t}<small>${u.ch.length} فصول · ${lessons(i).length} دروس</small><span class="mini"><i style="width:${upct(i)}%"></i></span></span><span style="color:var(--mut);font-size:14px">${upct(i)}%</span></button>`).join("")}
+function summaryH(n){if(n.l!==undefined)return `<section class="card"><h3>أهم الأفكار</h3><ul>${LS([n.u,n.c,n.l]).p.map(p=>`<li>${p}</li>`).join("")}</ul></section>`;
+ const g=n.c!==undefined?[[n.c,U[n.u].ch[n.c]]]:U[n.u].ch.map((ch,c)=>[c,ch]);
+ return g.map(([c,ch])=>`<section class="card"><h3>${ch.t}</h3><ul>${ch.l.map((l,k)=>`<li><b>${short(l.t)}:</b> ${l.p[0]} <a style="color:var(--acc);cursor:pointer;font-size:15px" onclick="go('u${n.u}.${c}.${k}')">عرض الدرس ←</a></li>`).join("")}</ul></section>`).join("")}
+function vocabH(n){return `<section class="card"><h3>المفردات والتعريفات</h3>`+terms(n).map(t=>`<div class="term"><b>${t[0]}</b>${t[1]}</div>`).join("")+`</section>`}
+function mapH(n){let it;
+ if(n.l!==undefined)it=VOC[key(n.u,n.c,n.l)].map(t=>({t:t[0],k:[]}));
+ else if(n.c!==undefined)it=U[n.u].ch[n.c].l.map((l,i)=>({t:short(l.t),k:VOC[key(n.u,n.c,i)].map(t=>t[0])}));
+ else it=U[n.u].ch.map(ch=>({t:short(ch.t),k:ch.l.map(l=>short(l.t))}));
+ return `<section class="card"><h3>خريطة المفاهيم</h3><div class="mp"><div class="mr">${short(ttl(n))}</div><div class="mc">${it.map(i=>`<div class="mb"><div class="mn">${i.t}</div>${i.k.map(k=>`<div class="mk">${k}</div>`).join("")}</div>`).join("")}</div></div></section>`}
+function cardsH(n){const t=terms(n)[F.i];return `<div class="fcw${FD>0?" nx":FD<0?" pv":""}" onclick="flip()"><div class="fci${F.f?" f":""}"><div class="fc">${t[0]}</div><div class="fc bk">${t[1]}</div></div></div><div class="fcn"><button class="go s" onclick="step(1)">→ التالية</button><span>${F.i+1} / ${terms(n).length} · اضغط على البطاقة لتقلبها</span><button class="go s" onclick="step(-1)">السابقة ←</button></div>`}
+function quizH(n){
+ if(n.l!==undefined){const a=[n.u,n.c,n.l],i=key(...a);return `<section class="card"><h3>أسئلة الدرس</h3>`+lq(a).map((q,k)=>qh(q,k,S.a[i+"."+k],`pickL('${i}',${k},`)).join("")+`</section>`+(ldone(a)?`<div class="card win">🎉 أنهيت هذا الدرس!</div>`:"")}
+ const k=(n.c!==undefined?"c":"u")+key(n.u,n.c);
+ if(!T)return `<section class="card win"><h3>${n.c!==undefined?"الاختبار الفصلي":"الاختبار التراكمي للوحدة"}</h3><p style="font-weight:400;color:var(--mut)">${n.c!==undefined?"6":"8"} أسئلة عشوائية من دروس ${n.c!==undefined?"الفصل":"الوحدة"}. ${best(k)}</p><button class="go" onclick="startT()">ابدأ الاختبار</button></section>`;
+ const d=T.q.every((_,j)=>T.a[j]!==undefined),r=T.q.filter((q,j)=>T.a[j]==q[2]).length;
+ return `<section class="card"><h3>الاختبار</h3>`+T.q.map((q,j)=>qh(q,j,T.a[j],`pickT(${j},`)).join("")+`</section>`+(d?`<div class="card win">${r==T.q.length?"🏆":"🎉"} نتيجتك ${r} من ${T.q.length}<br><button class="go" onclick="startT()">أعد الاختبار</button></div>`:"")}
+function nodeH(){const n=V,tabs=[["summary","📘 الملخص"],["vocab","📚 المفردات"],["map","🗺️ خريطة المفاهيم"],["cards","🃏 البطاقات"],["quiz",n.l!==undefined?"✏️ الأسئلة":"📝 الاختبار"]];
+ const par=n.l!==undefined?`u${n.u}.${n.c}`:n.c!==undefined?`u${n.u}`:"home",pt=n.l!==undefined?short(U[n.u].ch[n.c].t):n.c!==undefined?short(U[n.u].t):"الرئيسية";
+ let b={summary:summaryH,vocab:vocabH,map:mapH,cards:cardsH,quiz:quizH}[n.tab](n);
+ let pg="";if(n.l!==undefined){const i=flat.findIndex(a=>a[0]==n.u&&a[1]==n.c&&a[2]==n.l),p=flat[i-1],x=flat[i+1];pg=`<div class="pg">${x?`<button class="go" onclick="go('u${key(...x)}')">الدرس التالي ←</button>`:"<span></span>"}${p?`<button class="go s" onclick="go('u${key(...p)}')">→ الدرس السابق</button>`:""}</div>`}
+ return `<button class="go s" onclick="go('${par}')">→ ${pt}</button><h1>${ttl(n)}</h1><div class="tabs">${tabs.map(t=>`<button class="tab${n.tab==t[0]?" on":""}" onclick="tab('${t[0]}')">${t[1]}</button>`).join("")}</div>`+b+pg}
+function draw(){let all=0,seen=0,ok=0;flat.forEach(a=>lq(a).forEach((q,k)=>{all++;const v=S.a[key(...a)+"."+k];if(v!==undefined){seen++;if(v==q[2])ok++}}));
+ const p=Math.round(seen/all*100);{const pe=document.getElementById("pp");pe.textContent="⭐ "+ok+" · "+p+"%";if(ok>LASTOK){pe.classList.remove("bump");void pe.offsetWidth;pe.classList.add("bump")}LASTOK=ok}document.getElementById("pbar").style.width=p+"%";
+ document.body.className=V.p=="welcome"?"w":"";document.getElementById("side").innerHTML=sideH();
+ const vw=document.getElementById("view");vw.classList.remove("in");vw.innerHTML=V.p=="welcome"?`<section class="hero"><div class="logo">🔬</div><h1>أهلاً بك في الموقع التفاعلي</h1><p class="lead">لمادة العلوم – الصف الرابع الابتدائي<br>الجزء الأول<br>هيا نستكشف عالم العلوم معاً 🚀</p><button class="go cta" onclick="go('home')">هيا نبدأ ←</button><div class="chips"><span>📘 ملخصات</span><span>📚 مفردات</span><span>🗺️ خرائط مفاهيم</span><span>🃏 بطاقات</span><span>📝 اختبارات</span></div><span class="fl f1">🧬</span><span class="fl f2">🌿</span><span class="fl f3">🔭</span><span class="fl f4">🦋</span><span class="fl f5">🍎</span><span class="fl f6">🔬</span><div class="by">المعلمة: دلال علي الرايقي</div></section>`:V.p=="home"?homeH():nodeH();if(ANIM){void vw.offsetWidth;vw.classList.add("in");ANIM=0}NQ="";FD=0}
+draw();
+</script></body></html>
