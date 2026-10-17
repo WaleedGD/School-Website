@@ -18,12 +18,6 @@ An interactive website for reviewing Grade 4 Science (Part 1).
 
 
 
-## النشر عبر GitHub Pages | Publishing
-
-1. ارفع `index.html` و`LICENSE` و`README.md` إلى المستودع.
-2. من Settings ثم Pages، اختر الفرع `main` والمجلد `/ (root)`.
-3. انتظر دقائق ليظهر الرابط.
-
 ## الحقوق | License
 
 جميع الحقوق محفوظة © 2026 دلال علي الرايقي. لا يجوز النسخ أو التعديل أو إعادة النشر بدون إذن كتابي. التفاصيل في ملف [LICENSE](LICENSE).
