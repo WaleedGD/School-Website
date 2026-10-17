@@ -16,13 +16,7 @@ An interactive website for reviewing Grade 4 Science (Part 1).
 - وضع داكن، وحركات تفاعلية، ويعمل على الجوال والكمبيوتر
   Dark mode, animations, works on mobile and desktop
 
-## التشغيل | Usage
 
-افتح الرابط المنشور من المتصفح، ولا يحتاج تثبيتاً.
-Open the published link in a browser. No installation needed.
-
-الموقع ملف واحد (`index.html`). لحفظ تقدم الطالب يستخدم المتصفح نفسه، فلا تُرسل أي بيانات لأي جهة.
-The site is a single file (`index.html`). Progress is saved in the student's own browser; no data is sent anywhere.
 
 ## النشر عبر GitHub Pages | Publishing
 
